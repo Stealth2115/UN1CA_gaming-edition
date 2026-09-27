@@ -5,4 +5,8 @@
     <bool name="config_showNavigationBar">true</bool>
     <bool name="config_supportAudioSourceUnprocessed">false</bool>
     <bool name="config_systemCaptionsServiceCallsEnabled">true</bool>
+    <bool name="config_enable_rubin_service">false</bool>
+    <bool name="config_enable_multicontrol">false</bool>
+    <bool name="config_enable_hwresourceshare">false</bool>
+    <bool name="config_enable_background_tracking">false</bool>
 </resources>

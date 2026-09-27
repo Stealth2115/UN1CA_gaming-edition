@@ -1,0 +1,87 @@
+# CPUSET / scheduler tuning for sustained gaming and reduced touch latency
+# Prioritize top-app on the exynos2100 prime and performance cores without starving background tasks
+persist.sys.cpuset.top_app=0-7
+persist.sys.cpuset.foreground=0-5
+persist.sys.cpuset.background=0-3
+persist.sys.cpuset.system_background=0-3
+persist.sys.cpuset.restricted=0-3
+persist.sys.cpuset.expensive=0-7
+persist.sys.cpu.boost=1
+persist.sys.cpu.mitigations=0
+persist.sys.uclamp.top_app=20
+persist.sys.uclamp.foreground=15
+persist.sys.uclamp.background=10
+persist.sys.uclamp.system_background=8
+persist.sys.uclamp.restricted=6
+
+# Thermal / tracing reduction for sustained FPS and lower heat output
+debug.atrace.tags.enable=0
+debug.hwui.profile=false
+debug.hwui.renderer=vulkan
+debug.hwui.skia.log=false
+debug.renderengine.backend=threaded
+debug.hwui.use_vulkan=true
+debug.hwui.force_dark=false
+debug.sf.disable_gl_backpressure=1
+debug.sf.hw=1
+debug.sf.early_phase_offset_ns=500000
+debug.sf.early_app_phase_offset_ns=500000
+debug.sf.enable_hwc_vds=0
+debug.cpurend.vulkan=1
+persist.vendor.bluetooth.disable.inline_asm=true
+persist.sys.logd.kernel=false
+persist.sys.logd=0
+persist.system.trace=0
+persist.traced.enable=0
+persist.vendor.traced.enable=0
+persist.vendor.perfmonitor.enable=false
+persist.sys.usb.config=mtp
+
+# Mali-G78 / graphics tuning
+ro.hwui.use_vulkan=true
+ro.hardware.vulkan=adreno
+debug.hwui.renderer=vulkan
+debug.hwui.use_vulkan=true
+debug.hwui.skia.enabled=true
+debug.hwui.shader_cache=true
+persist.sys.ui.hw=true
+persist.sys.composition.type=surfaceflinger
+persist.sys.surface_flinger.hint_manager=true
+persist.sys.vulkan.multithread=true
+persist.sys.vulkan.threaded=true
+ro.surface_flinger.enable_frame_rate_override=true
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
+ro.surface_flinger.set_idle_timer_ms=250
+ro.surface_flinger.set_touch_timer_ms=300
+debug.hwui.disable_vsync=false
+debug.hwui.skia.force_cpu=0
+debug.sf.disable_gl_composition=true
+debug.sf.disable_hwc=1
+debug.sf.disable_backpressure=1
+debug.sf.disable_platform_binary=1
+debug.sf.latch_unsignaled=1
+debug.sf.dynamic_range=0
+debug.sf.enable_gl_backpressure=0
+
+# Dex2oat / app launch tuning
+dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.image-dex2oat-filter=everything
+dalvik.vm.dex2oat-filter=everything
+dalvik.vm.boot-dex2oat-threads=8
+dalvik.vm.dex2oat-threads=8
+ro.dalvik.vm.native.bridge=0
+
+# FUSE / storage tuning
+persist.sys.fuse.passthrough.enable=true
+persist.sys.fuse.transcode_enabled=false
+
+# SLMK / memory tuning to keep RAM available for games
+sys.sysctl.extra_free_kbytes=32768
+persist.sys.free_memory=0
+ro.lmk.kill_heaviest_task=true
+ro.lmk.use_minfree_levels=true
+ro.lmk.lowmemkill_processes=true
+ro.config.low_ram=false
+ro.config.max_starting_bg=8
+persist.sys.memperf.enable=true
+persist.sys.memperf.level=1

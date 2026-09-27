@@ -9,4 +9,12 @@
 # Overlays
 SYSTEM_DEBLOAT+="
 system/app/WifiRROverlayAppH2E
+system/app/Rubin
+system/priv-app/Rubin
+system/app/MultiControl
+system/priv-app/MultiControl
+system/app/HWResourceShare
+system/priv-app/HWResourceShare
+product/app/HWResourceShare
+product/priv-app/HWResourceShare
 "
